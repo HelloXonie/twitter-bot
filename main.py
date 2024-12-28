@@ -2,6 +2,12 @@
 
 import tweepy
 from dotenv import load_dotenv
+import os
+load_dotenv()
+
+CONSUMER_KEY=os.getenv()
+
+print(CONSUMER_KEY)
 print(tweepy.__version__)
 
 
