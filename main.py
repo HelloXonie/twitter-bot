@@ -3,19 +3,20 @@
 import tweepy
 from dotenv import load_dotenv
 import os
-load_dotenv()
 
-CONSUMER_KEY = os.getenv("CONSUMER_KEY")
 
-print(CONSUMER_KEY)
 print(tweepy.__version__)
 
+def get_client():
+    load_dotenv()
 
-#client = tweepy.Client(
-#        consumer_key=,
-#        consumer_secret=,
-#        access_token=,
-#        access_token_secret=,
-#        )
+    client = tweepy.Client(
+        consumer_key=os.getenv("CONSUMER_KEY"),
+        consumer_secret=os.getenv("CONSUMER_SECRET"),
+        access_token=os.getenv("ACCESS_TOKEN"),
+        access_token_secret=os.getenv("ACCESS_TOKEN_SECRET"),
+        )
+    return client
+
 
 
