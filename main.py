@@ -3,7 +3,8 @@
 import tweepy
 from dotenv import load_dotenv
 import os
-
+import feedparser
+from pprint import pprint
 
 print(tweepy.__version__)
 
@@ -18,5 +19,8 @@ def get_client():
         )
     return client
 
+#URL of RSS feed
+rss_url = ""
 
-
+feed = feedparser.parse(rss_url)
+pprint(feed)
