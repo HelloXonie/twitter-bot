@@ -20,7 +20,11 @@ def get_client():
     return client
 
 #URL of RSS feed
-rss_url = ""
+rss_url = "https://www.elitefourum.com/latest.rss"
 
 feed = feedparser.parse(rss_url)
-pprint(feed)
+pprint(feed['entries'][0])
+
+
+
+
