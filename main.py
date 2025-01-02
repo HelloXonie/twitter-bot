@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import os
 import feedparser
 from pprint import pprint
+from post import Posts
 
 print(tweepy.__version__)
 
