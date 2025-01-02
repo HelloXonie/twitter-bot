@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 import feedparser
 from pprint import pprint
-from post import Posts
+from posts import Posts
 
 print(tweepy.__version__)
 
@@ -24,8 +24,13 @@ def get_client():
 rss_url = "https://www.elitefourum.com/latest.rss"
 
 feed = feedparser.parse(rss_url)
-pprint(feed['entries'][0])
+first_posts = (feed['entries'][0])
 
-
+posts = Posts(
+        first_posts = ['author'],
+        first_posts = ['title'],
+        first_posts = ['link'],
+        )
+print(posts)
 
 
