@@ -28,8 +28,8 @@ first_posts = (feed['entries'][0])
 
 posts = Posts(
         first_posts['author'],
-        first_posts['title'],
         first_posts['link'],
+        first_posts['title'],
         )
 print(posts)
 
