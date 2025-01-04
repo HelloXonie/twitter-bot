@@ -20,6 +20,18 @@ def get_client():
         )
     return client
 
+def create_tweet(client, article):
+    title = posts.title
+    author = posts.author
+    link = posts.link
+
+    tweet_text = f"{title}\n{author}\n\n{link}"
+    print(tweet_text)
+    #client.create_tweet(text=tweet_text)
+
+    client = get_client()
+    create_tweet(client, posts)
+
 #URL of RSS feed
 rss_url = "https://www.elitefourum.com/latest.rss"
 
