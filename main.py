@@ -6,6 +6,10 @@ import os
 import feedparser
 from pprint import pprint
 from posts import Posts
+import pyshorteners
+
+shortener = pyshorteners.Shortener()
+
 
 print(tweepy.__version__)
 
@@ -23,14 +27,11 @@ def get_client():
 def create_tweet(client, article):
     title = posts.title
     author = posts.author
-    link = posts.link
+    link = shortener.tinyurl.short(posts.link)
 
-    tweet_text = f"{title}\n{author}\n\n{link}"
+    tweet_text = f"Title: {title}\nAuthor: {author}\n\n{link}"
     print(tweet_text)
     #client.create_tweet(text=tweet_text)
-
-    client = get_client()
-    create_tweet(client, posts)
 
 #URL of RSS feed
 rss_url = "https://www.elitefourum.com/latest.rss"
@@ -43,6 +44,10 @@ posts = Posts(
         first_posts['link'],
         first_posts['title'],
         )
-print(posts)
+
+client = get_client()
+create_tweet(client, posts)
+
+#print(posts)
 
 
