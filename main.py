@@ -4,6 +4,7 @@ import feedparser
 from pprint import pprint
 from posts import Posts
 from twitter import get_client, create_tweet
+import tweepy
 
 print(tweepy.__version__)
 
