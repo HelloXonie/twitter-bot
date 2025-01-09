@@ -16,7 +16,7 @@ def get_client():
         )
     return client
 
-def create_tweet(client, article):
+def create_tweet(client, posts):
     title = posts.title
     author = posts.author
     link = shortener.tinyurl.short(posts.link)
