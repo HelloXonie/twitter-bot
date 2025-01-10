@@ -1,2 +1,5 @@
 .env
 .testlogs
+*.swp
+__pycache__/
+*.pyc
