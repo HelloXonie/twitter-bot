@@ -1,5 +1,8 @@
+# Test files
 .env
 .testlogs
-*.swp
+
+# Misc
 __pycache__/
 *.pyc
+*.swp
